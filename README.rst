@@ -14,6 +14,10 @@ look at Markowik's `test suite`_ and its `show case`_.
 .. _`test suite`: http://code.google.com/p/markowik/source/browse#hg%2Fsrc%2Ftests
 .. _`show case`: http://code.google.com/p/markowik/w/list?q=label:Test
 
+.. image:: http://api.flattr.com/button/flattr-badge-large.png
+   :alt: Flattr this
+   :target: http://flattr.com/thing/410528/Markowik
+
 .. contents:: :depth: 2
 
 -------------------------------------------------------------------------------
