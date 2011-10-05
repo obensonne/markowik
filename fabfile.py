@@ -43,16 +43,18 @@ WIKITESTPAGE = """
 #summary Generated test illustration page
 #labels Test, Generated
 
-*Note*: The Markdown and Wiki source shown here might not be displayed
+*Note*: The Markdown and wiki source shown here might not be displayed
 perfectly. Especially code block markers `{{{` and `}}}` are always flushed
 left completely. If in doubt, look at the source of this Wiki page or check the
 original test files.
 
-Converter command used in this test:
+Converter command used for this test:
 
 {{{
 $ markowik MDFILE WIKIFILE %(options)s
 }}}
+
+Markowik revision: r%(revision)s
 
 = <font color="darkred">Markdown Source</font> =
 
@@ -74,6 +76,10 @@ $ markowik MDFILE WIKIFILE %(options)s
 def wiki_render():
     """Render wiki test pages."""
 
+    _needcleanworkingcopy()
+
+    context = {'revision': local("hg id -i", capture=True)}
+
     for testpage in glob.glob(os.path.join(WIKI, "Test*.wiki")):
         os.remove(testpage)
 
@@ -82,14 +88,14 @@ def wiki_render():
         name = "".join(x.capitalize() for x in name.split("-"))
         pagefile = os.path.join(WIKI, "Test%s.wiki" % name)
 
-        options = " ".join(tests.readoptions(cfgfile))
+        context['options'] = " ".join(tests.readoptions(cfgfile))
 
         with codecs.open(mdfile, 'r', 'UTF8') as fp:
-            md = fp.read().strip("\n")
+            context['md'] = fp.read().strip("\n")
         with codecs.open(wikifile, 'r', 'UTF8') as fp:
-            wiki = fp.read().strip("\n")
+            context['wiki'] = fp.read().strip("\n")
         with codecs.open(pagefile, 'w', 'UTF8') as fp:
-            fp.write(WIKITESTPAGE % dict(md=md, wiki=wiki, options=options))
+            fp.write(WIKITESTPAGE % context)
 
 def wiki_publish():
     """Publish wiki test pages."""
