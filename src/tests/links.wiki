@@ -1,0 +1,15 @@
+A plain link [http://www.google.com http://www.google.com] and a [http://python.org named link].
+
+An link with typefacing: <a href="http://foo.bar">the _link_</a> (converts to an HTML link).
+
+A link after a linebreak: [http://foo.bar the link].
+
+A typefaced (i.e. HTML) link after a linebreak: <a href="http://foo.bar">the _link_</a>.
+
+Links in a list:
+
+  * a [http://xkcd.com/ named link using a ref]
+  * the same _[http://xkcd.com/ link] empahsized_
+  * and with nested typefacing: <a href="http://xkcd.com/">the `link`</a> or <a href="http://xkcd.com/">the _link_</a> (both end up as HTML links)
+  * a link after a linebreak: [http://foo.bar the link]
+  * a typefaced (i.e. HTML) link after a linebreak: <a href="http://foo.bar">the _link_</a>

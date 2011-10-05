@@ -1,0 +1,4 @@
+#summary A page with a summary and labels
+#labels foo, bar
+
+Page body.

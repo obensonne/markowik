@@ -1,0 +1,44 @@
+>>> from markowik import convert, BadURL
+
+GOOD:
+
+>>> convert("[supported protocol](http://www.foo.bar)")
+u'[http://www.foo.bar supported protocol]'
+
+>>> convert("[supported protocol](https://www.foo.bar)")
+u'[https://www.foo.bar supported protocol]'
+
+>>> convert("[supported protocol](ftp://www.foo.bar)")
+u'[ftp://www.foo.bar supported protocol]'
+
+>>> convert("[wiki page](WikiPage)")
+u'[WikiPage wiki page]'
+
+>>> convert("![an image](x.png)", imagebaseurl="ftp://foo.bar/")
+u'ftp://foo.bar/x.png'
+
+BAD:
+
+>>> convert("![an image](x.png)")
+Traceback (most recent call last):
+BadURL: the URL 'x.png' has an invalid or missing protocol prefix (must be one of http, https, or ftp)
+
+>>> convert("![an image](x.png)", imagebaseurl="xxx://foo.bar/")
+Traceback (most recent call last):
+BadURL: the URL 'xxx://foo.bar/x.png' has an invalid or missing protocol prefix (must be one of http, https, or ftp)
+
+>>> convert("[missing protocol](www.foo.bar)")
+Traceback (most recent call last):
+BadURL: the URL 'www.foo.bar' has an invalid or missing protocol prefix (must be one of http, https, or ftp)
+
+>>> convert("[unsupported protocol](ftps://www.foo.bar)")
+Traceback (most recent call last):
+BadURL: the URL 'ftps://www.foo.bar' has an invalid or missing protocol prefix (must be one of http, https, or ftp)
+
+>>> convert("[unsupported protocol](//www.foo.bar)")
+Traceback (most recent call last):
+BadURL: the URL '//www.foo.bar' has an invalid or missing protocol prefix (must be one of http, https, or ftp)
+
+>>> convert("[not URL and not wiki page](foo-bar)")
+Traceback (most recent call last):
+BadURL: the URL 'foo-bar' has an invalid or missing protocol prefix (must be one of http, https, or ftp)

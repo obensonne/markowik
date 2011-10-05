@@ -1,0 +1,37 @@
+=== Isloated Images ===
+
+http://is.gd/smooley?x=x.png
+
+http://wiki.markowik.googlecode.com/hg/images/monkey.png
+
+http://wiki.markowik.googlecode.com/hg/images/smiley.png
+
+=== Relative and Absolute Image URLs ===
+
+  * absolute http://is.gd/smooley?x=x.png
+  * absolute https://thereisnoimageat.this/location.png
+  * absolute ftp://thereisnoimageat.this/location.png
+  * relative http://wiki.markowik.googlecode.com/hg/images/smiley.png
+
+=== In Text and Lists ===
+
+This sentence has a http://wiki.markowik.googlecode.com/hg/images/monkey.png inside.
+
+  * item 1
+  * item 2 has a nested image:
+  http://wiki.markowik.googlecode.com/hg/images/smiley.png
+  * item 3 has two nested images:
+  http://wiki.markowik.googlecode.com/hg/images/smiley.png
+  <br/>
+  http://wiki.markowik.googlecode.com/hg/images/smiley.png
+  * item 4
+
+http://wiki.markowik.googlecode.com/hg/images/monkey.png says hello.
+
+Look, a http://wiki.markowik.googlecode.com/hg/images/monkey.png
+
+=== In Links ===
+
+A plain image link: [http://tango.freedesktop.org/ http://wiki.markowik.googlecode.com/hg/images/smiley.png]
+
+A link with <a href="http://tango.freedesktop.org/">text and http://wiki.markowik.googlecode.com/hg/images/smiley.png</a>.

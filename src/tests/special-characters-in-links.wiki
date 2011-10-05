@@ -1,0 +1,8 @@
+Some more sophisticated links:
+
+  * this is [http://daringfireball.net/projects/markdown @link]
+  * another [http://daringfireball.net/projects/markdown &link]
+  * take [http://daringfireball.net/projects/markdown this `link]
+  * another [http://daringfireball.net/projects/markdown {{{link}}}]
+  * <a href="http://daringfireball.net/projects/markdown">foo `]` link</a>
+  * <a href="http://daringfireball.net/projects/markdown">an _emphasized `*`_ `_`nightmare</a>

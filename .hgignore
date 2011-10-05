@@ -1,0 +1,29 @@
+syntax: glob
+
+wiki
+
+# binary files
+*.pyc
+bin
+
+# buildout
+.installed.cfg
+.eggs
+.deveggs
+.parts
+.downloads
+
+# temporary build files
+tmp
+build
+dist
+*.egg-info
+
+# IDE files
+.project
+.pydevproject
+
+# test files
+*.out
+
+

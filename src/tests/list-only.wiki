@@ -1,0 +1,2 @@
+  * a document
+  * with a list only

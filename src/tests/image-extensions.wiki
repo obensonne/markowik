@@ -1,0 +1,11 @@
+Detecting and appending image file type extensions: 
+
+http://is.gd/smooley?x=x.png
+
+http://is.gd/smooley?x=x.svg
+
+http://is.gd/smooley?x=x.jpg
+
+http://is.gd/smooley?x=x.jpeg
+
+http://is.gd/smooley?x=x.foo&x=x.png

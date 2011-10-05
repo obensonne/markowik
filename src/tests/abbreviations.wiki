@@ -1,0 +1,9 @@
+=== Extension Example ===
+
+The <span title="Hyper Text Markup Language">HTML</span> specification is maintained by the <span title="World Wide Web Consortium">W3C</span>.
+
+=== Special Characters ===
+
+The abbreviation extension does not recognize abbreviations with non-ASCII characters, e.g. FÖÖ. This one works: <span title="Two *blind* ''bügs in a box''">LOO</span>. And <span title="Mixing 'single' and ''double'' quotes">THIS</span>.
+
+Do you see a need for more tricky tests?

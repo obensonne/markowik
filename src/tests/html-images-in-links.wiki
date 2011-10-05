@@ -1,0 +1,5 @@
+A plain image link: <a href="http://tango.freedesktop.org/"><img src="http://wiki.markowik.googlecode.com/hg/images/smiley.png" alt="smiley" title="foo" /></a>.
+
+A link with text and image: <a href="http://tango.freedesktop.org/">smile <img src="http://wiki.markowik.googlecode.com/hg/images/smiley.png" alt="smiley" title="foo" /></a>.
+
+A link with text and image: <a href="http://tango.freedesktop.org/">smile <img src="http://wiki.markowik.googlecode.com/hg/images/smiley.png" alt="smiley" title="title täxt" /></a>.

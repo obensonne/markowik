@@ -1,0 +1,9 @@
+<img src="http://is.gd/smooley?x=x.png" alt="alternative text" title="title text" />
+
+<img src="http://wiki.markowik.googlecode.com/hg/images/monkey.png" alt="alternative text" />
+
+<img src="http://wiki.markowik.googlecode.com/hg/images/smiley.png" alt="älternative text" title="title text" />
+
+<img src="http://wiki.markowik.googlecode.com/hg/images/monkey.png" alt="monkey" /> This is an image followed by a _newline_ and some text.
+
+This is some text followed by a _newline_ and an image <img src="http://wiki.markowik.googlecode.com/hg/images/monkey.png" alt="monkey" title="monkey" />
