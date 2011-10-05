@@ -137,7 +137,7 @@ def release_check(version):
 
     # --- version numbers -----------------------------------------------------
 
-    rx = r'\n==+\nChanges\n==+\n\n--+Version %s\n--+\n\n' % version
+    rx = r'\n==+\nChanges\n==+\n\n--+\nVersion %s\n--+\n\n' % version
     if not _contains(readme, rx):
         abort("bad version in README.rst")
 
@@ -155,20 +155,23 @@ def release_check(version):
     _needcleanworkingcopy()
 
     out = local("hg bookmarks", capture=True)
-    if not re.match(r' \* master', out):
+    if not re.match(r'\s*\* master\s', out):
         abort("working copy is not at master bookmark")
 
 def release(version):
     """Make a release."""
 
-    loca("bin/buildout")
+    local("bin/buildout")
 
     release_check(version)
+
+    local("rm -r %s" % os.path.join(ROOT, "build"))
+    local("rm -r %s" % os.path.join(ROOT, "dist"))
 
     local("bin/buildout setup %s clean build sdist" % ROOT)
 
     local("hg tag %s" % version)
 
-    local("bin/buildout setup %s upload" % ROOT)
+    local("bin/buildout setup %s register upload" % ROOT)
 
     push()
