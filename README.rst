@@ -7,16 +7,14 @@ Markowik converts `Markdown`_ to `Google Code Wiki`_.
 .. _`Google Code Wiki`: http://code.google.com/p/support/wiki/WikiSyntax
 .. _`Markdown`: http://daringfireball.net/projects/markdown/
 
+|flattr|
+
 Markowik is able to convert most Markdown constructs to its Google Code Wiki
 (GCW) equivalents. Instead of listing all supported conversions here, please
 have a look at Markowik's `test suite`_ and its `show case`_.
 
 .. _`test suite`: http://code.google.com/p/markowik/source/browse#hg%2Fsrc%2Ftests
 .. _`show case`: http://code.google.com/p/markowik/w/list?q=label:Test
-
-.. image:: http://api.flattr.com/button/flattr-badge-large.png
-   :alt: Flattr this
-   :target: http://flattr.com/thing/410528/Markowik
 
 .. contents::
    :depth: 1
@@ -252,3 +250,9 @@ Version 0.1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Initial release.
+
+.. ......................................................................... ..
+
+.. |flattr| image:: http://api.flattr.com/button/flattr-badge-large.png
+   :alt: Flattr this
+   :target: http://flattr.com/thing/410528/Markowik
