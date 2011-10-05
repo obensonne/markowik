@@ -168,10 +168,10 @@ def release(version):
     local("rm -r %s" % os.path.join(ROOT, "build"))
     local("rm -r %s" % os.path.join(ROOT, "dist"))
 
-    local("bin/buildout setup %s clean build sdist" % ROOT)
+    local("bin/buildout setup %s clean build sdist" % ROOT) # test build
 
     local("hg tag %s" % version)
 
-    local("bin/buildout setup %s register upload" % ROOT)
+    local("bin/buildout setup %s register sdist upload" % ROOT)
 
     push()
