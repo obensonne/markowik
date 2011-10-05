@@ -207,7 +207,7 @@ Every fix or new feature should include one ore more corresponding test cases
 an issue`_ describing your fix or enhancement.
 
 .. _`existing tests`: `test suite`_
-.. _`post an issue`: http://code.google.com/p/markowik/issues/list
+.. _`post an issue`: http://code.google.com/p/markowik/issues
 
 Markowik uses  `Buildout`_ to easily set up the development environment.
 Buildout automates the process of downloading and installing requirements to

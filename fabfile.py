@@ -1,3 +1,5 @@
+"""Fabfile for release management."""
+
 import codecs
 import glob
 import os
