@@ -24,6 +24,8 @@ have a look at Markowik's `test suite`_ and its `show case`_.
 Installation
 -------------------------------------------------------------------------------
 
+Markowik requires Python 2.6 or 2.7.
+
 Run::
 
     pip install markowik
