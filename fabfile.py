@@ -108,6 +108,10 @@ def wiki():
     wiki_render()
     wiki_publish()
 
+# =============================================================================
+# release tools
+# =============================================================================
+
 def push():
     """Push master branch."""
 
@@ -116,7 +120,7 @@ def push():
     hgignore = _readfile(".hgignore").split("\n")[2:]
     gitignore = _readfile(".gitignore").split("\n")
     if hgignore != gitignore:
-        abort("hg and giut ignore files differ")
+        abort("hg and git ignore files differ")
 
     local("hg push -r master google")
     local("hg push -r master bitbucket")
@@ -155,7 +159,7 @@ def release_check(version):
         abort("working copy is not at master bookmark")
 
 def release(version):
-    """Make a relase."""
+    """Make a release."""
 
     loca("bin/buildout")
 
