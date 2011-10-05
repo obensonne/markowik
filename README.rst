@@ -1,5 +1,5 @@
 ===============================================================================
-markowik
+Markowik
 ===============================================================================
 
 Markowik converts `Markdown`_ formatted text to `Google Code Wiki`_.
@@ -13,6 +13,8 @@ look at Markowik's `test suite`_ and its `show case`_.
 
 .. _`test suite`: http://code.google.com/p/markowik/source/browse#hg%2Fsrc%2Ftests
 .. _`show case`: http://code.google.com/p/markowik/w/list?q=label:Test
+
+.. contents:: :depth: 2
 
 -------------------------------------------------------------------------------
 Installation
@@ -235,7 +237,7 @@ Changes
 ===============================================================================
 
 -------------------------------------------------------------------------------
-Version 0.1 (in development)
+Version 0.1
 -------------------------------------------------------------------------------
 
 - initial release
