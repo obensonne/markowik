@@ -242,7 +242,7 @@ When done, the following scripts can be found in the ``bin/`` directory:
 Changes
 -------------------------------------------------------------------------------
 
-Version 0.1.1 (in development)
+Version 0.1.1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Improved documentation.

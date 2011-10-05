@@ -171,8 +171,8 @@ def release(version):
 
     release_check(version)
 
-    local("rm -r %s" % os.path.join(ROOT, "build"))
-    local("rm -r %s" % os.path.join(ROOT, "dist"))
+    local("rm -rf %s" % os.path.join(ROOT, "build"))
+    local("rm -rf %s" % os.path.join(ROOT, "dist"))
 
     local("bin/buildout setup %s clean build sdist" % ROOT) # test build
 
