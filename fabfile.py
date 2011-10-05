@@ -14,12 +14,12 @@ ROOT = HERE
 # internal helpers
 # =============================================================================
 
-def _readfile(fname):
+def _readfile(fname, strip="\n"):
     """Shortcut for reading a text file."""
 
-    with open(fname) as fp:
+    with codecs.open(fname, 'r', 'UTF8') as fp:
         content = fp.read()
-    return content
+    return content.strip(strip) if strip else content
 
 def _contains(fname, rx, reflags=0):
     """Check if content of `fname` matches (contains) `rx`."""
@@ -89,11 +89,9 @@ def wiki_render():
         pagefile = os.path.join(WIKI, "Test%s.wiki" % name)
 
         context['options'] = " ".join(tests.readoptions(cfgfile))
+        context['md'] = _readfile(mdfile)
+        context['wiki'] = _readfile(wikifile)
 
-        with codecs.open(mdfile, 'r', 'UTF8') as fp:
-            context['md'] = fp.read().strip("\n")
-        with codecs.open(wikifile, 'r', 'UTF8') as fp:
-            context['wiki'] = fp.read().strip("\n")
         with codecs.open(pagefile, 'w', 'UTF8') as fp:
             fp.write(WIKITESTPAGE % context)
 
