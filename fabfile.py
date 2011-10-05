@@ -56,7 +56,7 @@ Converter command used for this test:
 $ markowik MDFILE WIKIFILE %(options)s
 }}}
 
-Markowik revision: r%(revision)s
+Markowik revision: [http://code.google.com/p/markowik/source/browse/?r=%(revision)s %(revision)s]
 
 = <font color="darkred">Markdown Source</font> =
 
