@@ -2,14 +2,14 @@
 Markowik
 ===============================================================================
 
-Markowik converts `Markdown`_ formatted text to `Google Code Wiki`_.
+Markowik converts `Markdown`_ to `Google Code Wiki`_.
 
 .. _`Google Code Wiki`: http://code.google.com/p/support/wiki/WikiSyntax
 .. _`Markdown`: http://daringfireball.net/projects/markdown/
 
 Markowik is able to convert most Markdown constructs to its Google Code Wiki
-(GCW) equivalents. Instead of listing all supported conversions, please have a
-look at Markowik's `test suite`_ and its `show case`_.
+(GCW) equivalents. Instead of listing all supported conversions here, please
+have a look at Markowik's `test suite`_ and its `show case`_.
 
 .. _`test suite`: http://code.google.com/p/markowik/source/browse#hg%2Fsrc%2Ftests
 .. _`show case`: http://code.google.com/p/markowik/w/list?q=label:Test
@@ -18,7 +18,9 @@ look at Markowik's `test suite`_ and its `show case`_.
    :alt: Flattr this
    :target: http://flattr.com/thing/410528/Markowik
 
-.. contents:: :depth: 2
+.. contents::
+   :depth: 1
+   :local:
 
 -------------------------------------------------------------------------------
 Installation
@@ -33,11 +35,14 @@ or::
     easy_install markowik
 
 You can also use Markowik without installation, as described under
-`Contribute`_.
+`Contributions`_.
 
 -------------------------------------------------------------------------------
-Command Line Usage
+Usage
 -------------------------------------------------------------------------------
+
+Command Line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 From the help output::
 
@@ -70,13 +75,12 @@ The currently supported (i.e. tested) extensions are *abbr*, *tables*, and
 unexpected results in the converted wiki text.
 
 Concerning the option ``--html-images``, see the explanations below at
-`Limitations`_.
+`Caveats`_.
 
 .. _`Python Markdown`: http://www.freewisdom.org/projects/python-markdown/
 
--------------------------------------------------------------------------------
-Programmatic Usage
--------------------------------------------------------------------------------
+Programmatic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Markowik is implemented in Python. The *markowik* module provides a function
 named ``convert``. Semantically it is similar to the command line interface
@@ -87,9 +91,8 @@ example::
     >>> markowik.convert("Some *markdown* text ...", mx=['tables'])
     u'Some _markdown_ text ...'
 
--------------------------------------------------------------------------------
 Page Pragmas
--------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 GCW `page pragmas`_ can be set in Markdown source files as meta data in the
 format defined by the PyMD `meta extension`_::
@@ -111,15 +114,14 @@ Markowik does not recognize page pragmas.
 .. _`page pragmas`: http://code.google.com/p/support/wiki/WikiSyntax#Pragmas
 .. _`meta extension`: http://www.freewisdom.org/projects/python-markdown/Meta-Data
 
--------------------------------------------------------------------------------
-Limitations
--------------------------------------------------------------------------------
+Caveats
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 GCW cannot express all markup possible in Markdown. This means Markdown source
 files should be written with the following limitations in mind.
 
 URLs in Links and Images
-~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''
 
 URLs used for links or image sources have to be absolute and must have a
 specific protocol to get recognized by GCW. In particular, any URL must start
@@ -127,7 +129,7 @@ with ``http://``, ``https://``, or ``ftp://``. Markowik *aborts the conversion*
 if it finds URLs not matching these requirements.
 
 Typefacing in Link Names
-~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''
 
 GCW does not support typefacing in link names. For instance GCW renders the
 link name in ``[http://foo.com _Foo_]`` literally, i.e. as ``_Foo_``. However,
@@ -139,7 +141,7 @@ characters which have to be escaped in GCW using backtick (`````) markers will
 also result in HTML links.
 
 Nested Paragraphs
-~~~~~~~~~~~~~~~~~
+'''''''''''''''''
 
 GCW does not really support multiple nested paragraphs (e.g. in lists or
 blockquotes). Markowik simulates multiple nested paragraphs by separating them
@@ -147,7 +149,7 @@ with a ``<br/>`` (which visually mimics paragraphs but does not break the
 nesting environment).
 
 Images
-~~~~~~
+''''''
 
 Markdown allows to express alternative and title texts for images. GCW's image
 syntax does not support this. The only way to preserve these texts is to use
@@ -159,7 +161,7 @@ extension. Markowik adds artificial image extensions if necessary, for instance
 ``http://foo.bar/image`` is changed to ``http://foo.bar/image?x=x.png``.
 
 Abbreviations
-~~~~~~~~~~~~~
+'''''''''''''
 
 GCW has no markup for `abbreviations`__ nor does it support the HTML tag
 ``<abbr>``. Markowik converts abbreviations to ``<span>``-elements which kind
@@ -168,7 +170,7 @@ of mimics abbreviations (in a limited fashion of course).
 .. __: http://www.freewisdom.org/projects/python-markdown/Abbreviations
 
 HTML
-~~~~
+''''
 
 Any plain HTML occurring in a Markdown source ends up literally in GCW  (with
 the exception of the content of span-level tags). This means the Markdown
@@ -179,7 +181,7 @@ other words: when using raw HTML you are on your own!
 .. __: http://code.google.com/p/support/wiki/WikiSyntax#HTML_support
 
 -------------------------------------------------------------------------------
-Project Resources
+Resources
 -------------------------------------------------------------------------------
 
 :Releases and documentation: `PyPI`_
@@ -193,9 +195,9 @@ Project Resources
 .. _`BitBucket`: https://bitbucket.org/obensonne/markowik
 .. _`GitHub`: https://github.com/obensonne/markowik
 
-===============================================================================
-Contribute
-===============================================================================
+-------------------------------------------------------------------------------
+Contributions
+-------------------------------------------------------------------------------
 
 To contribute to Markowik, fork the project at `Google Code`_, `BitBucket`_,
 or `GitHub`_.
@@ -236,12 +238,17 @@ When done, the following scripts can be found in the ``bin/`` directory:
 .. _`nose`: http://readthedocs.org/docs/nose/
 .. _`Fabric`: http://fabfile.org/
 
-===============================================================================
+-------------------------------------------------------------------------------
 Changes
-===============================================================================
-
 -------------------------------------------------------------------------------
+
+Version 0.1.1 (in development)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Improved documentation.
+- Minor fixes.
+
 Version 0.1
--------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- initial release
+- Initial release.
