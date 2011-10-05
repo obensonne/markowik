@@ -143,7 +143,7 @@ def release_check(version):
 
     # --- version numbers -----------------------------------------------------
 
-    rx = r'\n==+\nChanges\n==+\n\n--+\nVersion %s\n--+\n\n' % version
+    rx = r'\n--+\nChanges\n--+\n\nVersion %s\n~~+\n\n' % version
     if not _contains(readme, rx):
         abort("bad version in README.rst")
 
