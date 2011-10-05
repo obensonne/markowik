@@ -11,10 +11,9 @@ Markowik converts `Markdown`_ to `Google Code Wiki`_.
 
 Markowik is able to convert most Markdown constructs to its Google Code Wiki
 (GCW) equivalents. Instead of listing all supported conversions here, please
-have a look at Markowik's `test suite`_ and its `show case`_.
+have a look at Markowik's `test suite show case`__.
 
-.. _`test suite`: http://code.google.com/p/markowik/source/browse#hg%2Fsrc%2Ftests
-.. _`show case`: http://code.google.com/p/markowik/w/list?q=label:Test
+.. __: http://code.google.com/p/markowik/w/list?q=label:Test
 
 .. contents::
    :depth: 1
@@ -202,11 +201,11 @@ Contributions
 To contribute to Markowik, fork the project at `Google Code`_, `BitBucket`_,
 or `GitHub`_.
 
-Every fix or new feature should include one ore more corresponding test cases
+Every fix or new feature should include one or more corresponding test cases
 (check the `existing tests`_ for how tests should look like). Please also `post
 an issue`_ describing your fix or enhancement.
 
-.. _`existing tests`: `test suite`_
+.. _`existing tests`: http://code.google.com/p/markowik/source/browse#hg%2Fsrc%2Ftests
 .. _`post an issue`: http://code.google.com/p/markowik/issues
 
 Markowik uses  `Buildout`_ to easily set up the development environment.
