@@ -18,7 +18,7 @@ look at Markowik's `test suite`_ and its `show case`_.
 Installation
 -------------------------------------------------------------------------------
 
-Easy::
+Run::
 
     pip install markowik
 
@@ -59,8 +59,8 @@ separated by a space::
 
     $ markowik INPUT --mx tables def_list
 
-The currently supported (i.e. tested) extensions are `abbr`, `tables`, and
-`def_list`. Other extensions generally should work too but might yield
+The currently supported (i.e. tested) extensions are *abbr*, *tables*, and
+*def_list*. Other extensions generally should work too but might yield
 unexpected results in the converted wiki text.
 
 Concerning the option ``--html-images``, see the explanations below at
@@ -72,7 +72,7 @@ Concerning the option ``--html-images``, see the explanations below at
 Programmatic Usage
 -------------------------------------------------------------------------------
 
-Markowik is implemented in Python. The `markowik` module provides a function
+Markowik is implemented in Python. The *markowik* module provides a function
 named ``convert``. Semantically it is similar to the command line interface
 (keyword arguments correspond to command line options). Here's a short usage
 example::
@@ -132,6 +132,26 @@ converted to HTML links. As a result, link labels with certain special
 characters which have to be escaped in GCW using backtick (`````) markers will
 also result in HTML links.
 
+Nested Paragraphs
+~~~~~~~~~~~~~~~~~
+
+GCW does not really support multiple nested paragraphs (e.g. in lists or
+blockquotes). Markowik simulates multiple nested paragraphs by separating them
+with a ``<br/>`` (which visually mimics paragraphs but does not break the
+nesting environment).
+
+Images
+~~~~~~
+
+Markdown allows to express alternative and title texts for images. GCW's image
+syntax does not support this. The only way to preserve these texts is to use
+plain HTML ``<img>`` tags. The option ``--html-images`` enables this
+workaround.
+
+Another issue is that GCW expects image URLs to end with an image file type
+extension. Markowik adds artificial image extensions if necessary, for instance
+``http://foo.bar/image`` is changed to ``http://foo.bar/image?x=x.png``.
+
 Abbreviations
 ~~~~~~~~~~~~~
 
@@ -151,26 +171,6 @@ that URLs used in plain HTML tags are not checked for GCW compatibility. In
 other words: when using raw HTML you are on your own!
 
 .. __: http://code.google.com/p/support/wiki/WikiSyntax#HTML_support
-
-Nested Paragraphs
-~~~~~~~~~~~~~~~~~
-
-GCW does not really support multiple nested paragraphs (e.g. in lists or
-blockquotes). Markowik simulates multiple nested paragraphs by separating them
-with a ``<br/>`` (which visually mimics paragraphs but does not break the
-nesting environment).
-
-Images
-~~~~~~
-
-Markdown allows to express alternative and title texts for images. GCW's image
-syntax does not support this. The only way to preserve these texts is to use
-plain HTML ``<img>`` tags -- the option ``--html-images`` enables this
-workaround.
-
-Another issue is that GCW expects image URLs to end with an image file type
-extension. Markowik adds artificial image extensions if necessary, for instance
-``http://foo.bar/image`` is changed to ``http://foo.bar/image?x=x.png``.
 
 -------------------------------------------------------------------------------
 Project Resources
@@ -217,14 +217,14 @@ When done, the following scripts can be found in the ``bin/`` directory:
     The Markowik command line tool, ready to use.
 
 ``tests``
-    A test runner script (actually a wrapper for `nose`_).
+    Test runner script (a wrapper for `nose`_).
 
 ``fab``
-    `Fabric`_ binary to use for the project's `fabfile`.
+    `Fabric`_ binary to use for the project's *fabfile*.
 
 ``python``
     A Python interpreter whith acces to the local development version of
-    the `markowik` module.
+    the *markowik* module.
 
 .. _`Buildout`: http://www.buildout.org/
 .. _`nose`: http://readthedocs.org/docs/nose/
