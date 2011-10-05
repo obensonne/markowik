@@ -11,14 +11,24 @@ HERE = os.path.dirname(__file__)
 ROOT = HERE
 
 # =============================================================================
+# internal helpers
+# =============================================================================
+
+def _readfile(fname):
+    """Shortcut for reading a text file."""
+
+    with open(fname) as fp:
+        content = fp.read()
+    return content
 
 def _contains(fname, rx, reflags=0):
     """Check if content of `fname` matches (contains) `rx`."""
-    with open(fname) as fp:
-        content = fp.read()
+
+    content = _readfile(fname)
     return re.search(rx, content, reflags)
 
 def _needcleanworkingcopy():
+    """Aborts if working copy is dirty."""
 
     if local("hg status -n", capture=True):
         abort("dirty working copy")
@@ -103,6 +113,11 @@ def push():
 
     _needcleanworkingcopy()
 
+    hgignore = _readfile(".hgignore").split("\n")[2:]
+    gitignore = _readfile(".gitignore").split("\n")
+    if hgignore != gitignore:
+        abort("hg and giut ignore files differ")
+
     local("hg push -r master google")
     local("hg push -r master bitbucket")
     local("hg push -r master github")
@@ -146,8 +161,10 @@ def release(version):
 
     release_check(version)
 
-    local("bin/buildout setup %s clean build sdist upload" % ROOT)
+    local("bin/buildout setup %s clean build sdist" % ROOT)
 
     local("hg tag %s" % version)
+
+    local("bin/buildout setup %s upload" % ROOT)
 
     push()
