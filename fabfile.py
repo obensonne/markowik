@@ -177,6 +177,8 @@ def release(version):
     local("bin/buildout setup %s clean build sdist" % ROOT) # test build
 
     local("hg tag %s" % version)
+    
+    wiki()
 
     local("bin/buildout setup %s register sdist upload" % ROOT)
 
