@@ -110,6 +110,6 @@ def main():
             with codecs.open(opts.output, 'w', opts.encoding) as fp:
                 fp.write(wiki)
         except IOError as e:
-            abort("abort: failed to open input file (%s)" % e)
+            abort("failed to write output file (%s)" % e)
     else:
         print wiki.encode(opts.encoding)
