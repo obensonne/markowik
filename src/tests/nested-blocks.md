@@ -29,9 +29,9 @@ Lets check some nesting madness:
     >   -   this is a list
     >   -   in the second blockquote of list item 3
     >
-    >       PyMD does not support paragraphs in lists nested in blockquotes
+    >       PyMD 2.1 supports paragraphs in lists nested in blockquotes
     >
-    >   -   it renders them as code blocks
+    >   -   well done!
 
 3-level blockquote nesting:
 
