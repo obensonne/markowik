@@ -1,4 +1,4 @@
-HTML special characters: \< & \> %
+HTML special characters: < & > %
 
 In a code block:
 
