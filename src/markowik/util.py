@@ -4,7 +4,7 @@ import os
 import re
 import sys
 
-from markdown import etree, STX, ETX
+from markdown.util import etree, STX, ETX
 
 # -----------------------------------------------------------------------------
 

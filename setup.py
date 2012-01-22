@@ -7,7 +7,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 version = '0.1.2'
 
 install_requires = [
-    'markdown==2.0.3', 'argparse',
+    'markdown>=2.1', 'argparse',
 ]
 
 setup(name='markowik',

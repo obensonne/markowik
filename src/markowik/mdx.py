@@ -5,8 +5,8 @@ import os
 import re
 import textwrap
 
-from markdown import STX,  etree
 import markdown.treeprocessors
+from markdown.util import etree, STX
 
 from markowik.util import dump, log, truncate, escapewikiwords
 
