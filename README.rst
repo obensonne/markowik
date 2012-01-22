@@ -241,6 +241,15 @@ When done, the following scripts can be found in the ``bin/`` directory:
 Changes
 -------------------------------------------------------------------------------
 
+Version 0.1.2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Explicitly require *Python Markdown* 2.0.3 (this is a temporary fix until
+  *markowik* correctly works with *Python Markdown* 2.1). **Note:** If this
+  conflicts with requirements of other Python packages, run *markowik* in its
+  own buildout as described above.
+- Minor documentation tweaks.
+
 Version 0.1.1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
