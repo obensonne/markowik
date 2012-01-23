@@ -4,7 +4,7 @@ import sys, os
 here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.rst')).read()
 
-version = '0.1.2'
+version = '0.2'
 
 install_requires = [
     'markdown>=2.1', 'argparse',

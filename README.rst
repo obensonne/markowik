@@ -77,6 +77,7 @@ Concerning the option ``--html-images``, see the explanations below at
 `Caveats`_.
 
 .. _`Python Markdown`: http://www.freewisdom.org/projects/python-markdown/
+.. _`PyMD`: http://www.freewisdom.org/projects/python-markdown/
 
 Programmatic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -241,11 +242,20 @@ When done, the following scripts can be found in the ``bin/`` directory:
 Changes
 -------------------------------------------------------------------------------
 
+Version 0.2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Markowik now supports (and requires) `PyMD`_ ≥ 2.1. Next to minor API changes
+  PyMD 2.1 also had some changes and improvements in its conversion process
+  -- for details, `check how tests have been adjusted`__ for PyMD 2.1.
+
+.. __: http://code.google.com/p/markowik/source/list?r=0.2
+
 Version 0.1.2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Explicitly require *Python Markdown* 2.0.3 (this is a temporary fix until
-  *markowik* correctly works with *Python Markdown* 2.1). **Note:** If this
+- Explicitly require `PyMD`_ 2.0.3 (this is a temporary fix until
+  *markowik* correctly works with PyMD 2.1). **Note:** If this
   conflicts with requirements of other Python packages, run *markowik* in its
   own buildout as described above.
 - Minor documentation tweaks.
