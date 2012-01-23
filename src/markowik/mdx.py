@@ -6,6 +6,7 @@ import re
 import textwrap
 
 import markdown.treeprocessors
+from markdown.inlinepatterns import ESCAPE_RE, SimpleTextPattern
 from markdown.util import etree, STX
 
 from markowik.util import dump, log, truncate, escapewikiwords
@@ -426,6 +427,7 @@ class MarkowikExtension(markdown.Extension):
         pp = MarkowikPreprocessor()
         tp = MarkowikTreeprocessor(self)
         md.preprocessors.add('markowik', pp, '_end')
+        md.inlinePatterns['escape'] = SimpleTextPattern(ESCAPE_RE)
         md.treeprocessors.add('markowik', tp, '_end')
 
 # =============================================================================
