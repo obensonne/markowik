@@ -5,7 +5,7 @@ import os
 import re
 import textwrap
 
-import markdown.treeprocessors
+import markdown
 from markdown.inlinepatterns import ESCAPE_RE, SimpleTextPattern
 from markdown.util import etree, STX
 
