@@ -14,9 +14,11 @@ Orange
 item 1 with two descriptions
 :   desc 1.1
 :   desc 1.2
+
 item 2
 item 3
 :   description for two items (2 and 3)
+
 This stops the definition list. It's is a new paragraph.
 
 item 1
